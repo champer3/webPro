@@ -25,6 +25,8 @@ body{
     width: 80%;
     margin: auto;
     padding: 2rem 0rem;
+    z-index: 3;
+    position: relative;
 }
 
 .line1,
@@ -165,8 +167,58 @@ body{
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    transition: all 0.5s ease;
+    transition-property: background, transform;
+    transform-origin: 75% 75%;
+}
+
+.cursor.nav-active{
+    background: rgb(86, 124, 228);
+    transform: scale(2);
+}
+
+.cursor.explore-active{
+    background: white;
+    transform: scale(2);
+}
+
+.cursor-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%, -50%);
+}
+
+.title{
+    position: relative;
+    overflow: hidden;
+}
+
+.title-swap{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    mix-blend-mode: darken;
+    transform: translateY(100%);
+}
+
+.t-swipe1{
+    background: rgb(86, 124, 228);
+}
+.t-swipe2{
+    background: rgb(167, 110, 231);
+}
+.t-swipe3{
+    background: rgb(255, 139, 93);
 }
 
 .scrollmagic-pin-spacer{
     position: static !important;
+}
+
+body.hide{
+    overflow: hidden;
 }
